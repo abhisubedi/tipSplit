@@ -9,8 +9,8 @@ const Waves = ({ children }) => {
     const vantaEffect = WAVES({
       el: vantaRef.current,
       THREE: THREE,
-      mouseControls: true,
-      touchControls: true,
+      mouseControls: false,
+      touchControls: false,
       gyroControls: false,
       minHeight: 200.0,
       minWidth: 200.0,
@@ -26,7 +26,9 @@ const Waves = ({ children }) => {
   }, []);
 
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div
+      style={{ overflowX: "hidden", overflowY: "hidden", touchAction: "none" }}
+    >
       <div style={{ height: "100vh", width: "100vw" }} ref={vantaRef}>
         {children}
       </div>

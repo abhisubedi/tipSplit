@@ -33,6 +33,7 @@ body {
   font-size: 1.3rem;
   text-align: center;
   box-shadow: 10px 10px 5px #12343b;
+  overflow: hidden;
 
 }
 
@@ -117,12 +118,13 @@ section{
 
  }
 
- html::-webkit-scrollbar{
-  display: none;
-
 }
 
 
+@media screen and (max-width: 700px) {
+  body {
+    overflow: hidden;
+  }
 }
 
 
