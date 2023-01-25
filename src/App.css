@@ -1,5 +1,6 @@
 .header span{
   margin-top: 5px;
+  margin-bottom: 5px;
   display: flex;
   justify-content: center;
   font-size: 2rem;
@@ -17,51 +18,18 @@ body {
   
 }
 
-.topSection {
-  margin-top: 5px;
-  width: 500px; 
-  position: relative;
-  font-size: 1.3rem;
-  background: #2d545e;
-  padding: 10px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 10px 10px 5px #12343b;
-  
- 
 
-}
 
-.middleSection {
+.topSection, .middleSection, .bottomSection {
   background: #2d545e;
-  width: 500px;
+  width: 90%;
   padding: 10px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
-  font-size: 1.3rem;
-  text-align: center;
-  box-shadow: 10px 10px 5px #12343b;
- 
-
-}
-
-.bottomSection {
-  margin-top: 40px;
-  background: #2d545e;
-  width: 500px;
-  padding: 10px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  margin-top: 30px;
   font-size: 1.3rem;
   text-align: center;
   box-shadow: 10px 10px 5px #12343b;
@@ -136,8 +104,11 @@ section{
 
 /* Media Queries */
 
-@media screen and (max-width: 700px){
- .topSection, .middleSection, .bottomSection, label, input {
+@media screen and (max-width: 700px)
+
+{
+ .topSection, .middleSection, .bottomSection, label, input 
+ {
 
   width: auto;
   height: auto;
@@ -145,4 +116,13 @@ section{
 
 
  }
+
+ html::-webkit-scrollbar{
+  display: none;
+
 }
+
+
+}
+
+

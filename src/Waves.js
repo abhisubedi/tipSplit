@@ -26,8 +26,10 @@ const Waves = ({ children }) => {
   }, []);
 
   return (
-    <div style={{ height: "100vh", width: "100vw" }} ref={vantaRef}>
-      {children}
+    <div style={{ overflow: "hidden" }}>
+      <div style={{ height: "100vh", width: "100vw" }} ref={vantaRef}>
+        {children}
+      </div>
     </div>
   );
 };
