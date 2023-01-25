@@ -12,7 +12,7 @@ body {
   margin-top: 200px;
   width: 500px; 
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   background: #158;
   padding: 20px;
   border-radius: 10px;
@@ -34,7 +34,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 20px;
-  font-size: 2rem;
+  font-size: 1.3rem;
   text-align: center;
 
 }
@@ -43,7 +43,7 @@ label {
   display: flex;
   justify-content: center;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   line-height: 2rem;
   border: none;
 
@@ -56,7 +56,7 @@ input[type="text"]
   justify-content: center;
   display: flex;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 
@@ -79,11 +79,16 @@ input[type="text"]
   cursor: pointer;
 }
 
-
-.result span {
+.resultPerPerson span {
   display: block;
   padding: 0 50px;
 }
+
+.totalResult span {
+  display: block;
+  padding: 0 50px;
+}
+
 
 section{
   z-index: 99;

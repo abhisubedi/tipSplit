@@ -1,4 +1,3 @@
-//import { Flex, Box, Text } from "@chakra-ui/react";
 import "./App.css";
 import { useState, useEffect } from "react";
 import Waves from "./Waves";
@@ -12,6 +11,7 @@ function App() {
   const [tip, setTip] = useState("");
   const [split, setSplit] = useState(1);
   const [splitTotal, setSplitTotal] = useState(0);
+  const [tipPerPerson, setTipPerPerson] = useState(0);
 
   // this function is checking if the input value contains the percentage mark(%) or not, if not it will add the percentage mark(%) at the end of the value.
   function handleTipChange(e) {
@@ -41,16 +41,25 @@ function App() {
   }
 
   function calculate() {
-    const percentage = 1 + parseInt(tip.replace("%", "")) / 100;
-    const result = ((bill * percentage) / split).toFixed(2);
-    setSplitTotal(result);
+    const percentage = (1 + parseInt(tip.replace("%", "")) / 100).toFixed(2);
+    const totalResult = (bill * percentage) / split.toFixed(2);
+    setSplitTotal(totalResult.toFixed(2));
+  }
+
+  function calculateTipPerPerson() {
+    const tipAmount = ((bill * parseInt(tip.replace("%", ""))) / 100).toFixed(
+      2
+    );
+    const tipPerPerson = (tipAmount / split).toFixed(2);
+    setTipPerPerson(tipPerPerson);
   }
 
   //dependenices, when one
   useEffect(() => {
     calculate();
+    calculateTipPerPerson();
     // eslint-disable-next-line
-  }, [bill, tip, split]);
+  }, [bill, tip, split, tipPerPerson]);
 
   return (
     <Waves>
@@ -66,6 +75,7 @@ function App() {
           splitTotal={splitTotal}
           splitMinus={splitMinus}
           splitPlus={splitPlus}
+          tipPerPerson={tipPerPerson}
         />
       </section>
     </Waves>

@@ -11,7 +11,7 @@ const TopSection = ({ bill, handleBillChange, tip, handleTipChange }) => {
         value={bill}
         onChange={handleBillChange}
       />
-      <label> Tip </label>
+      <label> Tip ? </label>
       <div
         style={{
           display: "flex",
