@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Waves from "./Waves";
 import TopSection from "./components/TopSection";
 import BottomSection from "./components/BottomSection";
+import MiddleSection from "./components/MIiddleSection";
+import HeaderSection from "./components/HeaderSection";
 
 function App() {
   //useState() is a Hook that allows you to have state variables in functional components .
@@ -12,6 +14,7 @@ function App() {
   const [split, setSplit] = useState(1);
   const [splitTotal, setSplitTotal] = useState(0);
   const [tipPerPerson, setTipPerPerson] = useState(0);
+  const [totalBill, setTotalBill] = useState(0);
 
   // this function is checking if the input value contains the percentage mark(%) or not, if not it will add the percentage mark(%) at the end of the value.
   function handleTipChange(e) {
@@ -54,28 +57,40 @@ function App() {
     setTipPerPerson(tipPerPerson);
   }
 
+  function calculateTotalBill() {
+    const percentage = (1 + parseInt(tip.replace("%", "")) / 100).toFixed(2);
+    const totalBill = bill * percentage;
+    setTotalBill(totalBill.toFixed(2));
+  }
+
   //dependenices, when one
   useEffect(() => {
     calculate();
     calculateTipPerPerson();
+    calculateTotalBill();
     // eslint-disable-next-line
   }, [bill, tip, split, tipPerPerson]);
 
   return (
     <Waves>
       <section>
+        <HeaderSection />
         <TopSection
           bill={bill}
           handleBillChange={handleBillChange}
           tip={tip}
           handleTipChange={handleTipChange}
         />
-        <BottomSection
+        <MiddleSection
           split={split}
-          splitTotal={splitTotal}
           splitMinus={splitMinus}
           splitPlus={splitPlus}
+        />
+
+        <BottomSection
+          splitTotal={splitTotal}
           tipPerPerson={tipPerPerson}
+          totalBill={totalBill}
         />
       </section>
     </Waves>

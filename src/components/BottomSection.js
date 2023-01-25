@@ -1,24 +1,9 @@
 import React from "react";
 import "../App.css";
 
-const BottomSection = ({
-  split,
-  splitTotal,
-  splitMinus,
-  splitPlus,
-  tipPerPerson,
-}) => {
+const BottomSection = ({ splitTotal, tipPerPerson, totalBill }) => {
   return (
     <div className="bottomSection">
-      <div className="split">
-        <label> Split The Bill ? </label>
-        <div className="split-control">
-          <button onClick={splitMinus}> - </button>
-          <span>{split} </span>
-          <button onClick={splitPlus}> + </button>
-        </div>
-      </div>
-
       <div className="resultPerPerson">
         <label> Tip Per Person </label>
         <span> $ {tipPerPerson}</span>
@@ -27,6 +12,11 @@ const BottomSection = ({
       <div className="totalResult">
         <label> Total (Bill + Tip) Per Person </label>
         <span> $ {splitTotal}</span>
+      </div>
+
+      <div className="finalBill">
+        <label> Final Bill </label>
+        <span> $ {totalBill}</span>
       </div>
     </div>
   );

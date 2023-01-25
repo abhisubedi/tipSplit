@@ -16,7 +16,7 @@ const Waves = ({ children }) => {
       minWidth: 200.0,
       scale: 1.0,
       scaleMobile: 1.0,
-      color: 0x3c5a6e,
+      color: 0x12343b,
     });
     return () => {
       if (vantaEffect) {

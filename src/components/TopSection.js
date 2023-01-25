@@ -17,7 +17,13 @@ const TopSection = ({ bill, handleBillChange, tip, handleTipChange }) => {
           display: "flex",
         }}
       >
-        <input type="number" value={tip} onChange={handleTipChange} /> %
+        <input
+          type="number"
+          placeholder="how much "
+          value={tip}
+          onChange={handleTipChange}
+        />{" "}
+        %
       </div>
     </div>
   );
