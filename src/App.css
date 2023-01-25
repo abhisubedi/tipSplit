@@ -76,6 +76,9 @@ label {
   line-height: 2rem;
   border: none;
 
+ 
+
+
 }
 
 input[type="text"] 
@@ -111,11 +114,17 @@ input[type="text"]
 .resultPerPerson span {
   display: block;
   padding: 0 50px;
+  border:  3px #12343b;
+  border-style: outset;
+  margin-bottom: 20px;
 }
 
 .totalResult span {
   display: block;
   padding: 0 50px;
+  border:  3px #12343b;
+  border-style: outset;
+  margin-bottom: 15px;
 }
 
 
