@@ -1,27 +1,25 @@
 //import { Flex, Box, Text } from "@chakra-ui/react";
 import "./App.css";
 import { useState, useEffect } from "react";
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
+import Waves from "./Waves";
+import TopSection from "./components/TopSection";
+import BottomSection from "./components/BottomSection";
 
 function App() {
   //useState() is a Hook that allows you to have state variables in functional components .
 
   const [bill, setBill] = useState("");
-  const [tip, setTip] = useState("%");
+  const [tip, setTip] = useState("");
   const [split, setSplit] = useState(1);
   const [splitTotal, setSplitTotal] = useState(0);
 
   // this function is checking if the input value contains the percentage mark(%) or not, if not it will add the percentage mark(%) at the end of the value.
   function handleTipChange(e) {
-    let value = e.target.value.replace("%", "");
-    if (value.indexOf("%") === -1) {
-      value = value + "%";
-    }
-    setTip(value);
+    setTip(e.target.value);
   }
-  function handleBillChange(e) {
+  const handleBillChange = (e) => {
     setBill(e.target.value);
-  }
+  };
 
   // spliting up to people
 
@@ -51,39 +49,26 @@ function App() {
   //dependenices, when one
   useEffect(() => {
     calculate();
+    // eslint-disable-next-line
   }, [bill, tip, split]);
 
   return (
-    <section>
-      <div className="topSection">
-        <label> Bill Total </label>
-        <input
-          type="text"
-          placeholder={"0.00"}
-          value={bill}
-          onChange={handleBillChange}
+    <Waves>
+      <section>
+        <TopSection
+          bill={bill}
+          handleBillChange={handleBillChange}
+          tip={tip}
+          handleTipChange={handleTipChange}
         />
-
-        <label> Tip </label>
-        <input type="text" value={tip} onChange={handleTipChange} />
-      </div>
-
-      <div className="bottomSection">
-        <div className="split">
-          <label> Split </label>
-          <div className="split-control">
-            <button onClick={splitMinus}> - </button>
-            <span>{split} </span>
-            <button onClick={splitPlus}> + </button>
-          </div>
-        </div>
-
-        <div className="result">
-          <label> Split Total </label>
-          <span> {splitTotal}</span>
-        </div>
-      </div>
-    </section>
+        <BottomSection
+          split={split}
+          splitTotal={splitTotal}
+          splitMinus={splitMinus}
+          splitPlus={splitPlus}
+        />
+      </section>
+    </Waves>
   );
 }
 
