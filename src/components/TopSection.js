@@ -19,7 +19,7 @@ const TopSection = ({ bill, handleBillChange, tip, handleTipChange }) => {
       >
         <input
           type="number"
-          placeholder="how much "
+          placeholder="how much"
           value={tip}
           onChange={handleTipChange}
         />{" "}
