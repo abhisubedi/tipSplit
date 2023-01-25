@@ -26,9 +26,7 @@ const Waves = ({ children }) => {
   }, []);
 
   return (
-    <div
-      style={{ overflowX: "hidden", overflowY: "hidden", touchAction: "none" }}
-    >
+    <div style={{ overflowX: "hidden", overflowY: "hidden" }}>
       <div style={{ height: "100vh", width: "100vw" }} ref={vantaRef}>
         {children}
       </div>
