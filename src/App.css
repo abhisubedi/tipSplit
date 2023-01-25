@@ -1,5 +1,5 @@
 .header span{
-  margin-top: 20px;
+  margin-top: 5px;
   display: flex;
   justify-content: center;
   font-size: 2rem;
@@ -18,10 +18,10 @@ body {
 }
 
 .topSection {
-  margin-top: 70px;
+  margin-top: 5px;
   width: 500px; 
   position: relative;
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   background: #2d545e;
   padding: 10px;
   border-radius: 10px;
@@ -68,18 +68,15 @@ body {
 
 }
 
-label {
-  display: flex;
-  justify-content: center;
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  line-height: 2rem;
-  border: none;
+  label {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    border: none;
 
- 
-
-
-}
+  }
 
 input[type="text"] 
 {
@@ -100,11 +97,12 @@ input[type="text"]
 .split-control span {
   display: block;
   padding: 0 50px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .split button {
   border-radius: 99999999px;
+  border-color: white;
   border: 0;
   width: 20px;
   height: 20px;
@@ -134,4 +132,17 @@ section{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 700px){
+ .topSection, .middleSection, .bottomSection, label, input {
+
+  width: auto;
+  height: auto;
+  font-size: 1.1rem;
+
+
+ }
 }

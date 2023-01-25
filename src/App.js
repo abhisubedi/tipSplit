@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Waves from "./Waves";
+import { Container, Flex } from "@chakra-ui/react";
 import TopSection from "./components/TopSection";
 import BottomSection from "./components/BottomSection";
 import MiddleSection from "./components/MIiddleSection";
@@ -72,28 +73,40 @@ function App() {
   }, [bill, tip, split, tipPerPerson]);
 
   return (
-    <Waves>
-      <section>
-        <HeaderSection />
-        <TopSection
-          bill={bill}
-          handleBillChange={handleBillChange}
-          tip={tip}
-          handleTipChange={handleTipChange}
-        />
-        <MiddleSection
-          split={split}
-          splitMinus={splitMinus}
-          splitPlus={splitPlus}
-        />
+    <Container maxW="full">
+      <Waves>
+        <Flex
+          flex={1}
+          justify={"center"}
+          align={"center"}
+          position={"relative"}
+          w={"full"}
+          color={"white"}
+          fontFamily={"Kalam"}
+        >
+          <section>
+            <HeaderSection />
+            <TopSection
+              bill={bill}
+              handleBillChange={handleBillChange}
+              tip={tip}
+              handleTipChange={handleTipChange}
+            />
+            <MiddleSection
+              split={split}
+              splitMinus={splitMinus}
+              splitPlus={splitPlus}
+            />
 
-        <BottomSection
-          splitTotal={splitTotal}
-          tipPerPerson={tipPerPerson}
-          totalBill={totalBill}
-        />
-      </section>
-    </Waves>
+            <BottomSection
+              splitTotal={splitTotal}
+              tipPerPerson={tipPerPerson}
+              totalBill={totalBill}
+            />
+          </section>
+        </Flex>
+      </Waves>
+    </Container>
   );
 }
 
