@@ -76,9 +76,8 @@ function App() {
     <Container maxW="full">
       <Waves>
         <Flex
-          flex={1}
-          justify={"center"}
-          align={"center"}
+          justifyContent={"center"}
+          // align={"center"}
           position={"relative"}
           w={"full"}
           color={"white"}
