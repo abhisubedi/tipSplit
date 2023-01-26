@@ -1,4 +1,4 @@
-# Project Title
+# Tip Split App
 
 📱 The app goes by the name (Tip Split) - [[(https://tip-split.vercel.app/)]](https://tip-split.vercel.app/). 
 
