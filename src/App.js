@@ -72,7 +72,7 @@ function App() {
 
   return (
     <Waves>
-      <Container maxW="full" display={"flex"} justifyContent={"center"}>
+      <Container maxW="full" display={"flex"} justifyContent={"center"} top={0}>
         <Flex
           justifyContent={"center"}
           position={"relative"}
