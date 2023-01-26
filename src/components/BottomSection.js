@@ -43,7 +43,7 @@ const BottomSection = ({ splitTotal, tipPerPerson, totalBill }) => {
 
         <label> Final Bill </label>
         <Text borderStyle={"outset"} border={"2px"} borderColor={"#12343b"}>
-          $ {totalBill}
+          {`$ ${totalBill}`}
         </Text>
       </div>
     </Box>

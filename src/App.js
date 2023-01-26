@@ -10,8 +10,8 @@ import HeaderSection from "./components/HeaderSection";
 function App() {
   //useState() is a Hook that allows you to have state variables in functional components .
 
-  const [bill, setBill] = useState("");
-  const [tip, setTip] = useState("");
+  const [bill, setBill] = useState(0);
+  const [tip, setTip] = useState(0);
   const [split, setSplit] = useState(1);
   const [splitTotal, setSplitTotal] = useState(0);
   const [tipPerPerson, setTipPerPerson] = useState(0);
@@ -45,21 +45,19 @@ function App() {
   }
 
   function calculate() {
-    const percentage = (1 + parseInt(tip.replace("%", "")) / 100).toFixed(2);
+    const percentage = (1 + tip / 100).toFixed(2);
     const totalResult = (bill * percentage) / split.toFixed(2);
     setSplitTotal(totalResult.toFixed(2));
   }
 
   function calculateTipPerPerson() {
-    const tipAmount = ((bill * parseInt(tip.replace("%", ""))) / 100).toFixed(
-      2
-    );
+    const tipAmount = ((bill * tip) / 100).toFixed(2);
     const tipPerPerson = (tipAmount / split).toFixed(2);
     setTipPerPerson(tipPerPerson);
   }
 
   function calculateTotalBill() {
-    const percentage = (1 + parseInt(tip.replace("%", "")) / 100).toFixed(2);
+    const percentage = (1 + tip / 100).toFixed(2);
     const totalBill = bill * percentage;
     setTotalBill(totalBill.toFixed(2));
   }
