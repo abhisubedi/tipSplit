@@ -1,11 +1,17 @@
 import React from "react";
+import { Text, Box } from "@chakra-ui/react";
 import "../App.css";
 
-const HeaderSection = ({ header }) => {
+const HeaderSection = () => {
   return (
-    <div className="header">
-      <span> TipSplit APP </span>
-    </div>
+    <Box
+      marginTop={"5px"}
+      marginBottom={"10px"}
+      fontSize={"35px"}
+      textAlign={"center"}
+    >
+      <Text> TipSplit APP </Text>
+    </Box>
   );
 };
 

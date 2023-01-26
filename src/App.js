@@ -73,11 +73,10 @@ function App() {
   }, [bill, tip, split, tipPerPerson]);
 
   return (
-    <Container maxW="full">
-      <Waves>
+    <Waves>
+      <Container maxW="full" display={"flex"} justifyContent={"center"}>
         <Flex
           justifyContent={"center"}
-          // align={"center"}
           position={"relative"}
           w={"full"}
           color={"white"}
@@ -104,8 +103,8 @@ function App() {
             />
           </section>
         </Flex>
-      </Waves>
-    </Container>
+      </Container>
+    </Waves>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, NumberInput } from "@chakra-ui/react";
 import "../App.css";
 
 const TopSection = ({ bill, handleBillChange, tip, handleTipChange }) => {
@@ -15,32 +15,32 @@ const TopSection = ({ bill, handleBillChange, tip, handleTipChange }) => {
       padding={"10px"}
       box-shadow={"10px 10px 5px #12343b"}
       align-items={"center"}
-      background={"#2d545e;"}
+      background={"#2d545e"}
       mb={9}
       fontSize={{ base: "18px", md: "22px" }}
       textAlign={"center"}
-      fontFamily={"Kalam"}
-      textColor={"White"}
     >
       <div className="topSection">
         <div>
           <label> Bill Total </label>
-          <input
-            type="text"
-            placeholder={"0.00"}
-            value={bill}
-            onChange={handleBillChange}
-          />
-          <label> Tip % </label>
+          <NumberInput color={"#2d545e"}>
+            <input
+              placeholder={"0.00"}
+              value={bill}
+              onChange={handleBillChange}
+            />
+          </NumberInput>
         </div>
 
         <div>
-          <input
-            type="text"
-            placeholder="how much ? "
-            value={tip}
-            onChange={handleTipChange}
-          />{" "}
+          <label> Tip % </label>
+          <NumberInput color={"#2d545e"}>
+            <input
+              placeholder="how much ? "
+              value={tip}
+              onChange={handleTipChange}
+            />{" "}
+          </NumberInput>
         </div>
       </div>
     </Box>

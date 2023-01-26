@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, IconButton, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Text, Button } from "@chakra-ui/react";
 import "../App.css";
 const MiddleSection = ({ split, splitMinus, splitPlus }) => {
   return (
@@ -14,22 +14,27 @@ const MiddleSection = ({ split, splitMinus, splitPlus }) => {
       padding={"10px"}
       box-shadow={"10px 10px 5px #12343b"}
       align-items={"center"}
-      background={"#2d545e;"}
+      background={"#2d545e"}
       mb={9}
       fontSize={{ base: "18px", md: "22px" }}
       textAlign={"center"}
-      fontFamily={"Kalam"}
-      textColor={"White"}
     >
       <div className="middleSection">
-        <div className="split">
-          <label> Split The Bill ? </label>
-          <div className="split-control">
-            <button onClick={splitMinus}> - </button>
-            <span>{split} </span>
-            <button onClick={splitPlus}> + </button>
-          </div>
-        </div>
+        <Text>Split The Bill ? </Text>
+
+        <Box display={"flex"} justifyContent={"center"}>
+          <Button color={"#2d545e"} onClick={splitMinus}>
+            {" "}
+            -{" "}
+          </Button>
+
+          <Text padding={"0 50px"}>{split} </Text>
+
+          <Button color={"#2d545e"} onClick={splitPlus}>
+            {" "}
+            +{" "}
+          </Button>
+        </Box>
       </div>
     </Box>
   );
