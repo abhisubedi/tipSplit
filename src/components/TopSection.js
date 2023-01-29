@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, NumberInput } from "@chakra-ui/react";
-import "../App.css";
 
 const TopSection = ({ bill, handleBillChange, tip, handleTipChange }) => {
   return (
     <Box
+      data-testid="topSection"
       width={{ base: "280px", md: "400px" }}
       height={{ base: "150px", md: "150px" }}
       position={"relative"}

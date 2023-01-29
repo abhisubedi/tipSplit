@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState, useEffect } from "react";
 import Waves from "./Waves";
 import { Container, Flex } from "@chakra-ui/react";
@@ -6,8 +5,9 @@ import TopSection from "./components/TopSection";
 import BottomSection from "./components/BottomSection";
 import MiddleSection from "./components/MIiddleSection";
 import HeaderSection from "./components/HeaderSection";
+import { calcTipPerPerson } from "./utils/utils";
 
-function App() {
+const App = () => {
   //useState() is a Hook that allows you to have state variables in functional components .
 
   const [bill, setBill] = useState(0);
@@ -28,7 +28,7 @@ function App() {
   // spliting up to people
 
   //this function ensures that the split value cannot be less than 1.
-  function splitMinus() {
+  const splitMinus = () => {
     setSplit((oldValue) => {
       if (oldValue === 1) {
         return 1;
@@ -37,30 +37,29 @@ function App() {
         return Math.max(oldValue - 1, 1);
       }
     });
-  }
+  };
 
   // this function increment the split value by 1 and updates the split state with the new value, so the split value increases by 1.
-  function splitPlus() {
+  const splitPlus = () => {
     setSplit((oldValue) => oldValue + 1);
-  }
+  };
 
-  function calculate() {
+  const calculate = () => {
     const percentage = (1 + tip / 100).toFixed(2);
     const totalResult = (bill * percentage) / split.toFixed(2);
     setSplitTotal(totalResult.toFixed(2));
-  }
+  };
 
-  function calculateTipPerPerson() {
-    const tipAmount = ((bill * tip) / 100).toFixed(2);
-    const tipPerPerson = (tipAmount / split).toFixed(2);
+  const calculateTipPerPerson = () => {
+    const tipPerPerson = calcTipPerPerson(bill, tip, split);
     setTipPerPerson(tipPerPerson);
-  }
+  };
 
-  function calculateTotalBill() {
+  const calculateTotalBill = () => {
     const percentage = (1 + tip / 100).toFixed(2);
     const totalBill = bill * percentage;
     setTotalBill(totalBill.toFixed(2));
-  }
+  };
 
   //dependenices, when one
   useEffect(() => {
@@ -104,6 +103,6 @@ function App() {
       </Container>
     </Waves>
   );
-}
+};
 
 export default App;

@@ -1,6 +1,5 @@
 import React from "react";
 import { Text, Box } from "@chakra-ui/react";
-import "../App.css";
 
 const HeaderSection = () => {
   return (

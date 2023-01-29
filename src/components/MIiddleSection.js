@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Text, Button } from "@chakra-ui/react";
-import "../App.css";
 const MiddleSection = ({ split, splitMinus, splitPlus }) => {
   return (
     <Box
