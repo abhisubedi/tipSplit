@@ -6,6 +6,7 @@ import BottomSection from "./components/BottomSection";
 import MiddleSection from "./components/MIiddleSection";
 import HeaderSection from "./components/HeaderSection";
 import { calcTipPerPerson } from "./utils/utils";
+import FooterSection from "./components/FooterSection";
 
 const App = () => {
   //useState() is a Hook that allows you to have state variables in functional components .
@@ -98,6 +99,8 @@ const App = () => {
               tipPerPerson={tipPerPerson}
               totalBill={totalBill}
             />
+
+            <FooterSection />
           </section>
         </Flex>
       </Container>
